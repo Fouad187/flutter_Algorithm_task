@@ -58,46 +58,49 @@ class MyDrawer extends StatelessWidget {
           Divider(
             color: Color(0xFFEEF2FF),
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              ListTile(
-                title: Text('Auctions' , style: TextStyle(color: Kstylecolor),),
-                leading: Icon(MyIcons.auction, color: Kstylecolor,),
-              ),
-              ListTile(
-                title: Text('Current auction' , style: TextStyle(color: Kstylecolor),),
-                leading: Icon(MyIcons.bid__1 , color: Kstylecolor,),
-              ),
-              ListTile(
-                title: Text('Wallet' , style: TextStyle(color: Kstylecolor),),
-                leading: Icon(MyIcons.wallet_1 , color: Kstylecolor,),
-              ),
-              ListTile(
-                title: Text('Saved' , style: TextStyle(color: Kstylecolor),),
-                leading: Icon(MyIcons.b3180214 , color: Kstylecolor,),
-              ),
-              ListTile(
-                title: Text('Won' , style: TextStyle(color: Kstylecolor),),
-                leading: Icon(MyIcons.yes__1 , color: Kstylecolor,),
-              ),
-              ListTile(
-                title: Text('Settings' , style: TextStyle(color: Kstylecolor),),
-                leading: Icon(MyIcons.setting , color: Kstylecolor,),
-              ),
-              ListTile(
-                title: Text('Notifications' , style: TextStyle(color: Kstylecolor),),
-                leading: Icon(MyIcons.notifications , color: Kstylecolor,),
-              ),
-              myUser.access_token=='' ? Container() : ListTile(
-                title: Text('Log out' , style: TextStyle(color: Kstylecolor),),
-                leading: Icon(Icons.logout , color: Kstylecolor,),
-                onTap: (){
-                  Provider.of<UserData>(context , listen: false).setUser(User(access_token: ''));
-                },
-              )
+          Expanded(
+            child: Container(
+              child: ListView(
+                children: [
+                  ListTile(
+                    title: Text('Auctions' , style: TextStyle(color: Kstylecolor),),
+                    leading: Icon(MyIcons.auction, color: Kstylecolor,),
+                  ),
+                  ListTile(
+                    title: Text('Current auction' , style: TextStyle(color: Kstylecolor),),
+                    leading: Icon(MyIcons.bid__1 , color: Kstylecolor,),
+                  ),
+                  ListTile(
+                    title: Text('Wallet' , style: TextStyle(color: Kstylecolor),),
+                    leading: Icon(MyIcons.wallet_1 , color: Kstylecolor,),
+                  ),
+                  ListTile(
+                    title: Text('Saved' , style: TextStyle(color: Kstylecolor),),
+                    leading: Icon(MyIcons.b3180214 , color: Kstylecolor,),
+                  ),
+                  ListTile(
+                    title: Text('Won' , style: TextStyle(color: Kstylecolor),),
+                    leading: Icon(MyIcons.yes__1 , color: Kstylecolor,),
+                  ),
+                  ListTile(
+                    title: Text('Settings' , style: TextStyle(color: Kstylecolor),),
+                    leading: Icon(MyIcons.setting , color: Kstylecolor,),
+                  ),
+                  ListTile(
+                    title: Text('Notifications' , style: TextStyle(color: Kstylecolor),),
+                    leading: Icon(MyIcons.notifications , color: Kstylecolor,),
+                  ),
+                  myUser.access_token=='' ? Container() : ListTile(
+                    title: Text('Log out' , style: TextStyle(color: Kstylecolor),),
+                    leading: Icon(Icons.logout , color: Kstylecolor,),
+                    onTap: (){
+                      Provider.of<UserData>(context , listen: false).setUser(User(access_token: ''));
+                    },
+                  )
 
-            ],
+                ],
+              ),
+            ),
           )
         ],
       ),

@@ -44,7 +44,7 @@ class MainScreen extends StatelessWidget {
           ),
           SizedBox(height: 15,),
           Container(
-            height: deviceSize.height*0.45,
+            height: deviceSize.height*0.47,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: carCardList.length,
